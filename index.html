@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="calculator">
+        <div id="display">
+            <div id="result">
+                <img src="./assets/equals.svg" alt="sinal de igual"> 
+                <span id="result_display">0</span>
+            </div>
+        </div>
+        <div id="keyboad">
+            <button class="secondary" onclick="del()">CE</button>
+            <button onclick="clr()">C</button>
+            <button onclick="calculate('%')">
+                <img src="./assets/percent.svg" alt="sinal de porcentagem">
+            </button>
+            <button class="tertiary" onclick="calculate('/')">
+                <img src="./assets/divide.svg" alt="sinal de divisão">
+            </button>
+            <button onclick="calculate('7')">7</button>
+            <button onclick="calculate('8')">8</button>  
+            <button onclick="calculate('9')">9</button>  
+            <button class="tertiary" onclick="calculate('*')">
+                <img src="./assets/multiplication.svg" alt="sinal de multiplicação">
+            </button>
+            <button onclick="calculate('4')">4</button>
+            <button onclick="calculate('5')">5</button>
+            <button onclick="calculate('6')">6</button>
+            <button class="tertiary" onclick="calculate('-')">
+                <img src="./assets/minus.svg" alt="sinal de menos">
+            </button>
+            <button onclick="calculate('1')">1</button>
+            <button onclick="calculate('2')">2</button>
+            <button onclick="calculate('3')">3</button>
+            <button class="tertiary" onclick="calculate('+')">
+                <img src="./assets/plus.svg" alt="sinal de mais">
+            </button>
+            <button onclick="calculate('00')">00</button>
+            <button onclick="calculate('0')">0</button>
+            <button onclick="calculate(',')">,</button>
+            <button class="quartiary" onclick="result()">
+                <img src="./assets/result.svg" alt="sinal de igual">
+            </button>
+        </div>
+    </div>
+    <script src="./script.js"></script>    
+</body>
+</html>
