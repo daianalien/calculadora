@@ -2,16 +2,32 @@ let display = document.getElementById('result_display');
 
 
 function calculate(number) {
-    display.innerHTML = display.innerHTML+number;
+
+    let text = display.textContent;
+    if(text == '0'){
+        display.innerHTML = number;
+    }
+    else{
+        display.innerHTML = display.innerHTML+number;
+    }
+
+    
+    
 }
 
 function result() {
-    try{
+
+    let text = display.textContent;
+    console.log(text);
+
+    //fazer uma função para dividir as contas slice ou splice
+
+    /* try{
         display.innerHTML=eval(display.innerHTML)
     }
     catch(err){
         alert("Enter the valid display")
-    }
+    } */
 }
 
 function clr(){
@@ -19,5 +35,6 @@ function clr(){
 }
 
 function del(){
-    display.innerHTML = display.innerHTML.slice(0, -1);
+    /* display.innerHTML = display.innerHTML.slice(0, -1); */
+    display.innerHTML = "0";
 }
