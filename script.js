@@ -3,6 +3,7 @@ let decimalSeparator = '.';
 
 function calculate(value) {
     let text = display.textContent;
+    toggleDecimalSeparator()
     if (text === '0' || text === 'Erro') {
         display.innerHTML = value;
     } else {
