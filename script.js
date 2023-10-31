@@ -1,40 +1,47 @@
 let display = document.getElementById('result_display');
+let decimalSeparator = '.';
 
-
-function calculate(number) {
-
+function calculate(value) {
     let text = display.textContent;
-    if(text == '0'){
-        display.innerHTML = number;
+    if (text === '0' || text === 'Erro') {
+        display.innerHTML = value;
+    } else {
+        display.innerHTML += value;
     }
-    else{
-        display.innerHTML = display.innerHTML+number;
-    }
-
-    
-    
 }
 
 function result() {
-
     let text = display.textContent;
-    console.log(text);
 
-    //fazer uma função para dividir as contas slice ou splice
+    // Substitua vírgulas por pontos
+    text = text.replace(/,/g, decimalSeparator);
 
-    /* try{
-        display.innerHTML=eval(display.innerHTML)
+    try {
+        const result = eval(text);
+        display.innerHTML = result;
+    } catch (err) {
+        display.innerHTML = 'Erro';
     }
-    catch(err){
-        alert("Enter the valid display")
-    } */
 }
 
-function clr(){
-    display.innerHTML = "0";
+function clr() {
+    display.innerHTML = '0';
 }
 
-function del(){
-    /* display.innerHTML = display.innerHTML.slice(0, -1); */
-    display.innerHTML = "0";
+function del() {
+    let text = display.textContent;
+    if (text.length > 0) {
+        display.innerHTML = text.slice(0, -1);
+        if (display.innerHTML === '') {
+            display.innerHTML = '0';
+        }
+    }
+}
+
+function toggleDecimalSeparator() {
+    if (decimalSeparator === '.') {
+        decimalSeparator = ',';
+    } else {
+        decimalSeparator = '.';
+    }
 }
